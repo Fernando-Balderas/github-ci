@@ -99,19 +99,15 @@ function UserInformation() {
   useEffect(() => {
     setAppState({ loading: true });
     const apiUrl = `https://jsonplaceholder.typicode.com/users/${userId}`;
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then(
-        (userInfo) => {
-          setAppState({ isLoaded: true, userInfo: userInfo });
-        },
-        (error) => {
-          setAppState({
-            isLoaded: true,
-            error
+    fetch(apiUrl, {method: "GET"})
+        .then((res) => res.json())
+        .then((userInfo) => {
+            setAppState({ isLoaded: true, userInfo: userInfo });
+          })
+        .catch((error) => {
+          setAppState({ isLoaded: true, error });
           });
-        }
-      );
+    // eslint-disable-next-line
   }, [setAppState]);
 
   const { error, isLoaded, userInfo } = appState;
