@@ -74,7 +74,7 @@ function HomePage() {
   } else {
     return (
       <div>
-        <h2>Users</h2>
+        <h2>List of users</h2>
         <ul>
           {items.map(item => (
             <li key={item.name}>
