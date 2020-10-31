@@ -5,7 +5,6 @@ import {
   Switch,
   Route,
   Link,
-  useHistory,
   useLocation,
   useParams
 } from "react-router-dom";
